@@ -4,9 +4,11 @@ require 'sort_exercise'
 
 # Use a loop construct so we don't have to repeat our user prompt
 loop do
-  puts "Enter a set of space-separated words: (return to quit) " # give the user a prompt
-  words = gets.chomp.split      # takes the input from the user and
-                                # turns it into an array
+  print "Enter a set of space-separated words: (return to quit)\n> " # give the user a prompt
+  data = gets
+  break if data.nil?
+  words = data.chomp.scan(/\w+/) # takes the input from the user and
+                                 # turns it into an array
 
   break if words.nil? || words.empty? # quits the loop when nothing entered
 
@@ -14,8 +16,8 @@ loop do
 
   # Since the algorithms are destructive, we don't want to lose our
   # original input, so we duplicate it before sending it in.
-  puts "Loop-sorted words: #{SortExercise.loop_sort(words.dup)}"
-  puts "Recursion-sorted words: #{SortExercise.recursive_sort(words.dup)}"
+  puts "Loop-sorted words: #{SortExercise::Insertion.loop_sort(words)}"
+  puts "Recursion-sorted words: #{SortExercise::Insertion.recursive_sort(words)}"
 end
 
-puts "Thanks!"
+puts "\n\nThanks!"

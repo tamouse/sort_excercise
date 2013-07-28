@@ -8,29 +8,36 @@ module SortExercise
       SortExercise::VERSION.should_not be_nil
     end
 
-    context "numeric array" do
-      let(:a) {(1..7).to_a.shuffle}
-
-      it 'should sort by looping' do
-        SortExercise::loop_sort(a.dup).should == a.sort
-      end
-      
-      it 'should sort by recursing' do
-        SortExercise::recursive_sort(a.dup).should == a.sort
-      end
-    end
-
-    context "string array" do
-      let(:b) {%w{now is the winter of our discount tent}.shuffle}
-
-      it 'should sort by looping' do
-        SortExercise::loop_sort(b.dup).should == b.sort
-      end
-      
-      it 'should sort by recursing' do
-        SortExercise::recursive_sort(b.dup).should == b.sort
-      end
-    end
   end
-
+  
 end
+
+[SortExercise::Insertion,
+ SortExercise::Selection,
+].each do |m|
+
+  describe m do
+
+    [(1..7).to_a.shuffle,
+     %w{now is the winter of our discount tent}].each do |ary|
+      context "#{ary}" do
+
+        it 'should sort by looping' do
+          bary = m.loop_sort(ary)
+          bary.should == ary.sort
+          bary.should_not === ary
+        end
+      
+        it 'should sort by recursing' do
+          bary = m.recursive_sort(ary)
+          bary.should == ary.sort
+          bary.should_not === ary
+        end
+      end # context
+
+    end # each
+    
+  end # describe
+  
+end
+
