@@ -24,6 +24,8 @@ module SortExercise
     # first to run through the entire array, the inner one to compare
     # values to find the index of the smallest value in the array.
     def self.loop_sort!(a)
+      raise "not an array" unless a.kind_of?(Array)
+      return a if a.size < 2
       a.each_index do |outer_index|
         index_of_min = outer_index
         inner_index = outer_index + 1
@@ -42,6 +44,9 @@ module SortExercise
     # we'll need to have two recursions in the recursive
     # implementation.
     def self.recursive_sort!(a, outer_index=nil)
+      raise "not an array" unless a.kind_of?(Array)
+      return a if a.size < 2
+
       outer_index = 0 if outer_index.nil?
       return if outer_index >= a.size
       index_of_min = self.locate_min(a, outer_index, outer_index+1)

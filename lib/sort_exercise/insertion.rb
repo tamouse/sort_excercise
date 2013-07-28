@@ -23,6 +23,9 @@ module SortExercise
 
     # Implement a simple insertion sort in a loop
     def self.loop_sort!(a)
+      raise "not an array" unless a.kind_of?(Array)
+      return a if a.size < 2    # handles nil and 1 element arrays
+
       # We go through the array to look at each element in it, with it's index
       a.each_with_index do |element, index|
         hole = (index - 1)        # this starts us looking for a hole
@@ -56,9 +59,14 @@ module SortExercise
     # the main program, and what we use to test with.
     #
     def self.recursive_sort!(a,first=nil,last=nil)
+      raise "not an array" unless a.kind_of?(Array)
+      return a if a.size < 2    # handles nil and 1 element arrays
+
       # The first time recursive_sort! is called, the first and last
       # parameters are omitted, and get set at the beginning; this makes
       # calling the method a very clean "recursive_sort!(my_array)".
+
+
       first = 0 if first.nil?
       last = a.size-1 if last.nil?
 
