@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SortExercise::VERSION
   spec.authors       = ["Tamara Temple"]
   spec.email         = ["tamouse@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Exercise to write a looping and recursive sort method}
+  spec.summary       = %q{Exercise to write a looping and recursive sort method}
   spec.homepage      = ""
   spec.license       = "MIT"
 
