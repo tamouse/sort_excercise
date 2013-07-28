@@ -1,24 +1,25 @@
 # SortExercise
 
-TODO: Write a gem description
+This is an implementation of an insertion sort, done both iteratively
+(via looping) and recursively. This is an exercise from Chapter 10 of
+"Learning to Program" by Chris Pine.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Copy the repository from github:
 
-    gem 'sort_exercise'
+    $ git clone https://github.com/tamouse/sort_excercise.git <target_dir>
+    $ cd <target_dir>
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install sort_exercise
-
 ## Usage
 
-TODO: Write usage instructions here
+    $ bundle exec bin/sort_example
+
+and answer the prompts.
 
 ## Contributing
 
