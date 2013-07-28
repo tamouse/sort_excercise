@@ -8,8 +8,8 @@ This is an implementation of an insertion sort, done both iteratively
 
 Copy the repository from github:
 
-    $ git clone https://github.com/tamouse/sort_excercise.git <target_dir>
-    $ cd <target_dir>
+    $ git clone https://github.com/tamouse/sort_excercise.git sort_exercise
+    $ cd sort_exercise
 
 And then execute:
 
